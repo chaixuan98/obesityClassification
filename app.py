@@ -20,17 +20,17 @@ def predict():
         Height = float(request.form["Height"])
         Weight = float(request.form["Weight"])
         Family = int(request.form["Family"])
-        FAVC = int(request.form["FAVC"])
-        Smoke = int(request.form["Smoke"])
-        CH2O = int(request.form["CH2O"])
-        FAF = int(request.form["FAF"])
-        CALC = int(request.form["CALC"])
+        TDEE = int(request.form["TDEE"])
+        Smoker = int(request.form["Smoker"])
+        Water = int(request.form["Water"])
+        ActivityLevel = int(request.form["ActivityLevel"])
+        Alcohol = int(request.form["Alcohol"])
 
         #get prediction
-        input_cols = np.array([[Gender, Age, Height, Weight, Family,FAVC,Smoke,CH2O,FAF,CALC]])
+        input_cols = np.array([[Gender, Age, Height, Weight, Family,TDEE,Smoker,Water,ActivityLevel,Alcohol]])
         print(input_cols)
         prediction = model.predict(input_cols)[0]
-        return jsonify({'NObeyesdad':str(prediction)})
+        return jsonify({'ObeseLevel':str(prediction)})
         
 if __name__ == "__main__":
     app.run(debug=True)
