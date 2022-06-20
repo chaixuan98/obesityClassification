@@ -30,6 +30,7 @@ def predict():
         input_cols = np.array([[Gender, Age, Height, Weight, Family,TDEE,Smoker,Water,ActivityLevel,Alcohol]])
         print(input_cols)
         prediction = model.predict(input_cols)[0]
+        print(prediction)
         return jsonify({'ObeseLevel':str(prediction)})
         
 if __name__ == "__main__":
