@@ -8,12 +8,9 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
 from sklearn.preprocessing import LabelEncoder
 import matplotlib.pyplot as plt
-from sklearn.tree import export_graphviz
-from six import StringIO
-from IPython.display import Image
-from sklearn.metrics import average_precision_score, make_scorer, accuracy_score, precision_score, recall_score, f1_score
 from sklearn.metrics import classification_report
 import seaborn as sns
+from sklearn.tree import export_graphviz
 
 
 data = pd.read_csv(r"C:\Users\chaix\Downloads\ObesityData.csv")
@@ -129,10 +126,8 @@ for name, model in models:
 			this_df['model'] = name
 			dfs.append(this_df)
 			final = pd.concat(dfs, ignore_index=True)
-			# print(final)
-			# high = np.max(final.test_accuracy)
-			# print(high)
-			# # print(high.model)
+		
+
 			# finalClassifier = clf
 
 			bootstraps = []
